@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.fasterxml.jackson.module:jackson-module-kotlin:2.7.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.7.5/eccaaa8aeb48254764b375fd662ab3cbfd181e25/jackson-module-kotlin-2.7.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.7.5/716c4e0cb83aa9e4bd8f0f988220975120f4cb5/jackson-module-kotlin-2.7.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
