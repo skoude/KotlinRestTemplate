@@ -1,5 +1,7 @@
 **KotlinRestTemplate**
 
+[![Build Status](https://travis-ci.org/skoude/KotlinRestTemplate.svg?branch=master)](https://travis-ci.org/skoude/KotlinRestTemplate)
+
 This project contains a basic template for building microservices  and REST -services by using Kotlin and Spark Micro framework
 
 Components and libraries used:
