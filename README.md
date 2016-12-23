@@ -1,6 +1,6 @@
 **KotlinRestTemplate**
 
-This project contains a basic template for building microservices and REST -services ny using Kotlin and Spark Micro framework
+This project contains a basic template for building microservices  and REST -services by using Kotlin and Spark Micro framework
 
 Components and libraries used:
 * [Spark Micro framework](http://sparkjava.com)
@@ -15,8 +15,12 @@ Just clone this repo, and run
 * `./gradlew build`
 * `./gradlew run`
 
+
+
 Now your server should be started.. 
 Just open your browser and try: [http://localhost:4567/hello](http://localhost:4567/hello)
 
+If you wan't to run just the tests, just execute:
+* `./gradlew test`
 
 `Main.kt` contains all the routes. 

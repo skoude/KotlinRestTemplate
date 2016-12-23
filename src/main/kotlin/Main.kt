@@ -26,7 +26,13 @@ fun main(args: Array<String>) {
 object RestService {
 
     // this is an example of reading some system parameters..
-    val systemParam: SystemParameters = SystemUtils.readSystemParameters()
+   val systemParam:SystemParameters? =   try {
+         SystemUtils.readSystemParameters()
+    }  catch (e: Exception) {
+       null
+    }
+
+
     /**
      * Contains main Routes for app.
      */
@@ -44,6 +50,7 @@ object RestService {
         Spark.post("/testpost", { req, res -> testPost(req, res) })
 
 
+        KLogging().logger.info { "the username is " + systemParam?.username }
         KLogging().logger.info { "Server is started" }
 
     }
