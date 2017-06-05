@@ -1,3 +1,6 @@
+import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
+import com.fasterxml.jackson.module.kotlin.readValue
+import entity.DataTest
 import mu.KLogging
 import spark.Request
 import spark.Response
@@ -37,7 +40,6 @@ object RestService {
      * Contains main Routes for app.
      */
     fun main(args: Array<String>) {
-        // Read the parameters from the config.json.
 
         // Some Get -route examples
         Spark.get("/hello", { req, res -> "Hello World200" })
@@ -45,14 +47,35 @@ object RestService {
         // example of get method by using a function..
         Spark.get("/hellofunc", { req, res  -> testFun(req, res) })
 
+        // convert object to json
+        Spark.get("/tojson", { req, res  -> toJsonTest(req, res) } )
+
+        // convert json to object
+        Spark.get("/fromjson", { req, res  -> fromJsonTest(req, res) } )
 
         // Post example
         Spark.post("/testpost", { req, res -> testPost(req, res) })
 
-
         KLogging().logger.info { "the username is " + systemParam?.username }
         KLogging().logger.info { "Server is started" }
 
+    }
+
+
+    /**
+     * Validate json, and store it to
+     */
+    private fun  fromJsonTest(request: Request, response: Response): String {
+        val jsonString  = """{ "firstname":"Happy","lastname":"Gillmoure","streetAddress":"Bourbon streer 21A","postCode":"11111-23","country":"USA","email":"happygil@gil.com"}"""
+        val dataObject : DataTest = jacksonObjectMapper().readValue(jsonString)
+        return  dataObject.toString()
+    }
+
+    /**
+     * Convert DataTest object to json string and return it.
+     */
+    private fun  toJsonTest(request: Request, response: Response): String {
+        return jacksonObjectMapper().writeValueAsString(DataTest("Happy", "Gillmoure", "Bourbon streer 21A", "11111-23", "USA", "happygil@gil.com"))
     }
 
 
@@ -62,8 +85,10 @@ object RestService {
      */
     fun testFun(request: Request, response: Response): String {
 
-        KLogging().logger.info { "on tesFun..." + request.ip() }
-        return "Hello World from function.... "
+
+        KLogging().logger.info { "on testFun..." + request.ip() }
+        return "Hello dude.."
+
     }
 
 

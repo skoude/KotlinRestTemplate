@@ -20,7 +20,7 @@ Just clone this repo, and run
 
 
 Now your server should be started.. 
-Just open your browser and try: [http://localhost:4567/hello](http://localhost:4567/hello)
+Just open your browser and try: [http://localhost:4567/hello](http://localhost:4567/hello).
 
 If you wan't to run just the tests, just execute:
 * `./gradlew test`
