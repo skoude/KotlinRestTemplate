@@ -34,6 +34,13 @@ task fatJar(type: Jar) {
     with jar
 }
 
+task copyToLib(type: Copy) {
+    into "$buildDir/lib"
+    from(configurations.compile)
+}
+
+stage.dependsOn(copyToLib)
+
 
 repositories {
     mavenCentral()
